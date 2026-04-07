@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3b1",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#410007",
+                        "on-primary-fixed-variant": "#92001c",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb2bf",
+                        "secondary-fixed": "#ffd9de",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary-container": "#e50062",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#3f0016",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "tertiary-fixed": "#8cf4e8",
+                        "on-error": "#ffffff",
+                        "tertiary": "#006860",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#bb152c",
+                        "primary-container": "#db313f",
+                        "on-tertiary-container": "#f3fffc",
+                        "surface-dim": "#dadada",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5b403f",
+                        "primary": "#b7102a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#8f6f6e",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#008379",
+                        "primary-fixed": "#ffdad8",
+                        "secondary": "#b7004d",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#90003b",
+                        "outline-variant": "#e4bebc",
+                        "on-background": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "background": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .clay-card {
+            box-shadow: 8px 8px 16px rgba(0,0,0,0.04), -8px -8px 16px rgba(255,255,255,0.8);
+        }
+        .clay-card-inset {
+            box-shadow: inset 6px 6px 12px rgba(0,0,0,0.05), inset -6px -6px 12px rgba(255,255,255,0.8);
+        }
+        .pillowy-glow {
+            background: radial-gradient(circle at 20% 20%, rgba(255, 218, 216, 0.15) 0%, transparent 50%);
+        }
+        .antigravity-float {
+            filter: drop-shadow(0 20px 32px rgba(187, 21, 44, 0.1));
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .chain-float {
+            animation: float-slow 8s ease-in-out infinite;
+        }
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/60 backdrop-blur-xl no-border shadow-sm border-b border-surface-container">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black text-[#E63946] tracking-tighter font-headline">Healia</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-headline font-bold text-sm tracking-tight text-[#E63946] border-b-2 border-[#E63946] pb-1" href="#">Home</a>
+<a class="font-headline font-bold text-sm tracking-tight text-slate-600 hover:text-[#E63946] transition-colors" href="#">About</a>
+<a class="font-headline font-bold text-sm tracking-tight text-slate-600 hover:text-[#E63946] transition-colors" href="#">Planner</a>
+<a class="font-headline font-bold text-sm tracking-tight text-slate-600 hover:text-[#E63946] transition-colors" href="#">Assistant</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full clay-card-inset">
+<span class="material-symbols-outlined text-[#E63946]" style="font-variation-settings: 'FILL' 1;">generating_tokens</span>
+<span class="font-label text-xs font-semibold text-on-surface-variant">2,450 HLIA</span>
+</div>
+<div class="bg-surface-container-highest flex items-center gap-2 px-4 py-2 rounded-full clay-card hover:scale-95 transition-transform cursor-pointer">
+<span class="font-label text-xs font-medium text-on-surface-variant">0x12...ab34</span>
+<div class="w-6 h-6 rounded-full bg-primary-container overflow-hidden">
+<img alt="User Wallet Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAD4KKII5thf7nsC6Z52HpVtLW87k8LCMhJp3W7Z5FexvTLD2Q1hxS-hQdzHHsSyezsMzLdr2QCFzg9Z6ZuMSeVfm5I_ICyJWBem6SN_tHPHUKPMsVKtdWMhU-XugDhGbZiwZH5RstQ07xkWv5xnpL_3nREhoFZj0FpobVx9c6sKElELF4aWeVa3Gt15eUPfydHApx7GQRIvjU8QdFcqA8wc5B7vG9m3neW7-w3ZkyO5EstB0BFAVught_8vFIIwl5xGSoFgun1g8"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-32 space-y-24">
+<!-- Hero Section -->
+<div class="grid grid-cols-12 gap-6 min-h-[600px]">
+<div class="col-span-12 lg:col-span-8 relative overflow-hidden bg-surface-container-lowest rounded-xl clay-card pillowy-glow p-8 md:p-16 flex flex-col justify-center">
+<div class="relative z-10 max-w-xl">
+<span class="inline-block px-4 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label text-xs font-bold tracking-wider mb-8">WEB3 HEALTH REVOLUTION</span>
+<h1 class="text-5xl md:text-7xl font-black font-headline text-on-surface leading-[1.05] tracking-tighter mb-8">
+                        Eat Healthy. <br/><span class="text-primary">Earn Crypto.</span>
+</h1>
+<div class="space-y-4 mb-10">
+<p class="text-xl text-on-surface-variant leading-relaxed">
+                            Transform your daily meals into digital assets. Healia uses state-of-the-art AI vision to verify your nutrition in real-time.
+                        </p>
+<p class="text-base text-on-surface-variant/80 leading-relaxed border-l-4 border-primary/20 pl-6">
+                            Join over 50,000 health enthusiasts who are monetizing their wellness journey. Every verified healthy meal builds your on-chain reputation and unlocks exclusive ecosystem rewards.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-br from-primary to-secondary text-white px-10 py-5 rounded-xl font-headline font-bold text-lg shadow-[0_12px_24px_-8px_rgba(183,16,42,0.4)] hover:scale-105 active:scale-95 transition-all">
+                            Start Your Streak
+                        </button>
+<button class="bg-white text-on-surface px-10 py-5 rounded-xl font-headline font-bold text-lg clay-card hover:bg-surface-container-low transition-colors">
+                            How it Works
+                        </button>
+</div>
+</div>
+<!-- Antigravity Elements -->
+<div class="absolute right-[-10%] top-1/2 -translate-y-1/2 w-1/2 h-full hidden xl:block">
+<img alt="Healthy Bowl" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] object-cover rounded-full antigravity-float shadow-2xl border-[12px] border-white/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQH1uMmObIhKdw2qamFmmdq59fCElnyX73I5-x3EmbdhnRBULaYz8vg03CW5BDSoOkphoKFZqAGy3Qn6Vit5X7Kzn55Mp-ASbypV4bPhA0ftcZ1KysiPub38gxa_Km7JTU-fjhHHsZdseUVXvhUMlHDzmMcqDYdpQiy4XjWfXz0ZyRng2-d2E-z2VsUtUDsknvZevkk0BeCxUOLZvqtTKwz_4ntt8B5tIvzPrZi4_9aUCDypalGeJCelKDY73eAbPOYqz8vHw8D3Y"/>
+<div class="absolute top-20 right-20 bg-white/90 backdrop-blur-md p-6 rounded-2xl clay-card antigravity-float flex items-center gap-4 z-20">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-3xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<p class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest font-bold">Health Score</p>
+<p class="font-headline font-black text-2xl text-on-surface">98/100</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Bento Stats -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<div class="flex-1 bg-surface-container-low rounded-xl p-8 clay-card-inset flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="p-4 bg-secondary-fixed rounded-2xl">
+<span class="material-symbols-outlined text-on-secondary-fixed text-3xl">local_fire_department</span>
+</div>
+<span class="text-on-surface-variant font-label text-sm font-bold bg-white/50 px-3 py-1 rounded-full">LIVE DATA</span>
+</div>
+<div>
+<h3 class="text-5xl font-black font-headline text-on-surface mb-1">12,842</h3>
+<p class="text-base text-on-surface-variant font-medium">Global Streaks Today</p>
+</div>
+</div>
+<div class="flex-1 bg-primary-container/10 rounded-xl p-8 clay-card pillowy-glow flex flex-col justify-between border border-primary-fixed/30">
+<div class="flex justify-between items-start">
+<div class="p-4 bg-primary-container rounded-2xl">
+<span class="material-symbols-outlined text-white text-3xl">account_balance_wallet</span>
+</div>
+</div>
+<div>
+<p class="text-[11px] font-label text-primary font-bold uppercase tracking-[0.2em] mb-2">Total Rewards Distributed</p>
+<h3 class="text-4xl font-black font-headline text-on-surface">850,000 HLIA</h3>
+</div>
+</div>
+</div>
+</div>
+<!-- How It Works Section -->
+<section class="space-y-12">
+<div class="text-center max-w-2xl mx-auto space-y-4">
+<h2 class="text-4xl font-black font-headline text-on-surface">The Cycle of Wellness</h2>
+<p class="text-on-surface-variant font-medium">Building a healthier you, one block at a time. Our ecosystem is designed to reward consistency and transparency.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white rounded-xl p-10 clay-card flex flex-col items-center text-center space-y-6 hover:-translate-y-2 transition-transform">
+<div class="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 shadow-inner">
+<span class="material-symbols-outlined text-4xl">photo_camera</span>
+</div>
+<div class="space-y-3">
+<h4 class="text-xl font-bold font-headline">1. Snap &amp; Verify</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Take a photo of your meal. Our AI instantly analyzes nutrients and logs them to your private dashboard.</p>
+</div>
+</div>
+<div class="bg-white rounded-xl p-10 clay-card flex flex-col items-center text-center space-y-6 hover:-translate-y-2 transition-transform">
+<div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-green-500 shadow-inner">
+<span class="material-symbols-outlined text-4xl">verified</span>
+</div>
+<div class="space-y-3">
+<h4 class="text-xl font-bold font-headline">2. On-Chain Audit</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Verified healthy choices are committed to the blockchain, building your verifiable health reputation.</p>
+</div>
+</div>
+<div class="bg-white rounded-xl p-10 clay-card flex flex-col items-center text-center space-y-6 hover:-translate-y-2 transition-transform">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center text-primary shadow-inner">
+<span class="material-symbols-outlined text-4xl">payments</span>
+</div>
+<div class="space-y-3">
+<h4 class="text-xl font-bold font-headline">3. Collect HLIA</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">Receive Healia tokens directly to your wallet. Use them for premium plans or trade in the ecosystem.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Bento -->
+<div class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-6 bg-surface-container-high rounded-xl p-12 clay-card-inset group relative overflow-hidden flex flex-col justify-center min-h-[400px]">
+<div class="relative z-10 space-y-6">
+<span class="material-symbols-outlined text-tertiary text-5xl mb-2">psychology</span>
+<h3 class="text-4xl font-black font-headline text-on-surface">AI Vision Tracking</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        No more manual logging. Snap a photo of your meal and our proprietary AI identifies ingredients, estimates calories, and calculates macro-density in seconds.
+                    </p>
+<div class="flex gap-3">
+<span class="px-4 py-1.5 bg-white/60 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider text-on-surface-variant shadow-sm">Real-time Analysis</span>
+<span class="px-4 py-1.5 bg-white/60 backdrop-blur-md rounded-full text-xs font-bold uppercase tracking-wider text-on-surface-variant shadow-sm">99% Accuracy</span>
+</div>
+</div>
+<div class="absolute -bottom-16 -right-16 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity pointer-events-none">
+<span class="material-symbols-outlined text-[320px]" style="font-variation-settings: 'wght' 700;">camera</span>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-6 bg-white rounded-xl p-12 clay-card relative overflow-hidden flex flex-col justify-center min-h-[400px]">
+<div class="relative z-10 space-y-6">
+<span class="material-symbols-outlined text-primary text-5xl mb-2">link</span>
+<h3 class="text-4xl font-black font-headline text-on-surface">Sepolia Rewards</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed max-w-md">
+                        Your health is an asset. Verified healthy actions trigger smart contracts on the Sepolia testnet, rewarding you with Healia tokens that unlock premium health features.
+                    </p>
+<div class="p-6 bg-surface-container-low rounded-2xl clay-card-inset border border-white/50 backdrop-blur-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Mainnet Verified</span>
+</div>
+<code class="text-sm font-mono text-primary font-bold break-all">0x8a23f...92contract_verified</code>
+</div>
+</div>
+</div>
+</div>
+<!-- Supported Chains Section -->
+<section class="py-12 bg-surface-container-low rounded-xl clay-card-inset relative overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-10 left-10 chain-float">
+<svg class="text-slate-400" fill="none" height="60" viewbox="0 0 32 32" width="60" xmlns="http://www.w3.org/2000/svg"><path d="M15.925 2.408l-.15.485v19.092l.15.15 8.825-5.22-.025-.472-8.8-4.035z" fill="currentColor"></path><path d="M15.925 2.408L7.1 12.408l-.025.472 8.85 5.22V2.408z" fill="currentColor" fill-opacity=".6"></path></svg>
+</div>
+<div class="absolute bottom-20 right-20 chain-float" style="animation-delay: -2s;">
+<svg class="text-purple-400" fill="none" height="80" viewbox="0 0 38 38" width="80" xmlns="http://www.w3.org/2000/svg"><path d="M28.45 10.14L19 4.69 9.55 10.14v10.89L19 26.47l9.45-5.44V10.14z" fill="currentColor" fill-opacity=".4"></path></svg>
+</div>
+</div>
+<div class="max-w-4xl mx-auto px-8 relative z-10 text-center space-y-12">
+<h3 class="text-2xl font-black font-headline text-on-surface-variant/60 uppercase tracking-[0.3em]">Built on Secure Foundations</h3>
+<div class="flex flex-wrap justify-center items-center gap-16 md:gap-24">
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-20 h-20 rounded-2xl bg-white clay-card flex items-center justify-center group-hover:scale-110 transition-transform">
+<img alt="Ethereum" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS7WeGUQk5vPwtcW_PgwGhRQGAJh5breTR09C72iB5UOqnkFYbZ13om44sE8vQe5bD0GMsVk2Cq-WLFy8QnLPZ-pC0cpGLl466Bx2LyIOv-zjs4qEahCXw8nikR55L_XasbVb2ntUU_Ze5pcRbxAWeCxb6MLzfGr9ymBOD7oaASu4RLg6nx0bK8QRRlwzph_s4djhRhPQryArnzy3_Z8s9w_CzM_hxlGNgpt15oyDkGVxYA1emgU-6AGrxmr57gMeZMQnYJdop42E"/>
+</div>
+<span class="font-label text-sm font-bold text-on-surface-variant">Ethereum</span>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-20 h-20 rounded-2xl bg-white clay-card flex items-center justify-center group-hover:scale-110 transition-transform">
+<img alt="Polygon" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIyi69pAtcF2Y7UsyVOSWFlR2phhEfnHxYuUhvv461-sjZ-PH46WbQOmgSZHTVizO1J0meOtK9hjWDxCo-b2gycjIgLOErnqsnrODP5nzrEiAz44_LB9-GgnTXHqQBWHA_RiZHrFzmBa9EEIuuvKY6KUEO-wTRxOQIa7QTsup_oSJDtXGs1jBXRDbjjuHGqYVqb3JsQkVGCN1uqpoqYM6LDzArNrtRN1pTCHmA90QZV_Zxcu7dS39Hu2-haTNgUEOJjD_oBFbaG8g"/>
+</div>
+<span class="font-label text-sm font-bold text-on-surface-variant">Polygon</span>
+</div>
+<div class="flex flex-col items-center gap-4 group">
+<div class="w-20 h-20 rounded-2xl bg-white clay-card flex items-center justify-center group-hover:scale-110 transition-transform">
+<img alt="Sepolia" class="w-10 h-10 grayscale opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSZyB30TFlsxH1I_QSukUWnaUHd-cSqyFvf3mrl_WLeS-HMMykNb4OinQFm0lo_Rm5l6HtvFIHWAPV_Ty285Zxc8adIJY7_7nvE6AGAC_2twsJ777j4WZmRCm0oTPlFfQrUkkpkHJwZznK0gPKfROdRnMQSOIo4adTw09mgHlKgumUJTLjIyyrC-ncIJ7iTQGxXCrTew49OXeJKeQeCAt6BGdPAqoAq8kk74LrPZTI2njWhNAHg-8m5PKni3Zaq5EfdGNzbEen7eo"/>
+</div>
+<span class="font-label text-sm font-bold text-on-surface-variant">Sepolia</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Mock Reviews -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-20">
+<!-- Review 1 -->
+<div class="bg-rose-50/40 rounded-xl p-8 clay-card pillowy-glow flex flex-col gap-6 border border-rose-100/50 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Sarah" class="w-14 h-14 rounded-full bg-white clay-card p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGf6b9_IzXQstGTACKS3QQFY68rRMyxu-nThTT66h4C9VyniAeR9ww8JLKeOpQdZb78yX19Eh--8oKcHTH5h7v16KJ0sT5zKVRJKCnJV7o07ryZndJzVXmYXo-oNjw9_tNHXft6G_mRuB_woIVQ-xSjlLG265YQ8Gf3ZpujM2PAuWod83ILqqGpXfW99yEhYnr0tFoBOrE5wVKHiDh9NafsmlzxjzS7mkoP8vyEpSGWYzI7Srwz2Xz_Ker_zO37z6tys8POMGvXTo"/>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Sarah J.</h4>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-base italic leading-relaxed">
+                    "Healia actually makes me want to eat my greens. The token rewards are such a cool motivator! I've already earned enough for a premium nutrition plan."
+                </p>
+</div>
+<!-- Review 2 -->
+<div class="bg-rose-50/40 rounded-xl p-8 clay-card pillowy-glow flex flex-col gap-6 border border-rose-100/50 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Marcus" class="w-14 h-14 rounded-full bg-white clay-card p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4m0zdnAeInpqTPol0gWmMNeWLsHl9llfJYHwN6AkNN0qxU4rGOMGv52ZfqcdVBiUMu4vK_cbhjNxxjuLAm83PZ-p0O-ywujV8me4MLxSvydYB2Wfc7HWgH9rG5gd-fdScArcD200MNZZFGGdN5SSQil3urJCiCtv83s6GRUQya504OJFhzi4rFnUIOMDwehlJebcCpBaEqQ4WBSyeqqITAaHqCAlJlk9InjKM3E0Gs7Sczaw5w-NOeXo5WsymPt1I4Cz9WSEsZzs"/>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Marcus T.</h4>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-base italic leading-relaxed">
+                    "The AI vision is scary accurate. It picked up my complex salad ingredients instantly. Tracking macro-density has never been this effortless."
+                </p>
+</div>
+<!-- Review 3 -->
+<div class="bg-rose-50/40 rounded-xl p-8 clay-card pillowy-glow flex flex-col gap-6 border border-rose-100/50 hover:shadow-lg transition-shadow">
+<div class="flex items-center gap-4">
+<img alt="Elena" class="w-14 h-14 rounded-full bg-white clay-card p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo2F9bMCdZbP3jf_s_5LJFd0Ll3BjCTLAlHTdZYMk_TabdtKBhv33tLNLEJIqATq7nB8swKD__mPv-jbWxXRf8AkjMEBBqMuCVwJTkJ_bzcdC0-VVMq7YNX6HjPfxcTHT4f4uh51CJD-vpFwvPA-KG9-h4Xt8_KcT4JnVLN_aovYFkvQlPu5U__GrsLyTwZX9IoPTXWyNQG5urXJyxyMwpY36afGaJpaNS521r39yQHEe1RI4rguHU3y9v3MEbsYknskdrWQ7yasA"/>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Elena R.</h4>
+<div class="flex text-amber-400">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-on-surface-variant text-base italic leading-relaxed">
+                    "Finally, a health app that feels modern and rewarding. Love the claymorphic design and the transparency of the on-chain verification."
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[4rem] mt-20 bg-white shadow-[0_-20px_40px_-20px_rgba(0,0,0,0.05)] border-t border-surface-container">
+<div class="max-w-7xl mx-auto py-20 px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2 space-y-6">
+<span class="text-3xl font-black text-[#E63946] font-headline">Healia</span>
+<p class="text-slate-500 max-w-sm leading-relaxed">The first decentralized health network focused on real-world actions. Your biology, your data, your rewards.</p>
+</div>
+<div class="space-y-4">
+<h5 class="font-headline font-bold text-on-surface">Ecosystem</h5>
+<nav class="flex flex-col gap-3">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Documentation</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Smart Contracts</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Tokenomics</a>
+</nav>
+</div>
+<div class="space-y-4">
+<h5 class="font-headline font-bold text-on-surface">Community</h5>
+<nav class="flex flex-col gap-3">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Discord</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Twitter (X)</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm" href="#">Blog</a>
+</nav>
+</div>
+</div>
+<div class="pt-8 border-t border-surface-container flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="font-body text-xs font-medium text-slate-400">© 2024 Healia Network. All health data is encrypted on-chain.</p>
+<div class="flex gap-8">
+<a class="font-body text-xs font-medium text-slate-400 hover:text-primary transition-colors" href="#">Disclaimer</a>
+<a class="font-body text-xs font-medium text-slate-400 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body text-xs font-medium text-slate-400 hover:text-primary transition-colors" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

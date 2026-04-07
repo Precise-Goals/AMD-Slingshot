@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800;900&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color Tokens - Healia Design System */
+  --primary: #b7102a;
+  --secondary: #b7004d;
+  --surface: #f9f9f9;
+  --surface-container: #eeeeee;
+  --surface-container-low: #f3f3f3;
+  --surface-container-lowest: #ffffff;
+  --surface-container-high: #e8e8e8;
+  --surface-container-highest: #e2e2e2;
+  --surface-variant: #e2e2e2;
+  --surface-dim: #dadada;
+  --on-surface: #1a1c1c;
+  --on-surface-variant: #5b403f;
+  --on-primary: #ffffff;
+  --on-secondary: #ffffff;
+  --primary-fixed: #ffdad8;
+  --primary-fixed-dim: #ffb3b1;
+  --secondary-fixed: #ffd9de;
+  --secondary-fixed-dim: #ffb2bf;
+  --primary-container: #db313f;
+  --secondary-container: #e50062;
+  --on-primary-fixed: #410007;
+  --on-primary-fixed-variant: #92001c;
+  --tertiary: #006860;
+  --tertiary-fixed: #8cf4e8;
+  --tertiary-container: #008379;
+  --surface-tint: #bb152c;
+  --outline: #8f6f6e;
+  --outline-variant: #e4bebc;
+  --inverse-primary: #ffb3b1;
+  --background: #f9f9f9;
+
+  /* Typography */
+  --font-headline: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-label: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ────── Material Symbols ────── */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.symbol-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ────── Claymorphism Shadows ────── */
+.clay-card {
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.04), -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.clay-card-inset {
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.05), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.clay-embossed {
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.04), -8px -8px 16px rgba(255, 255, 255, 0.8);
+}
+
+.clay-debossed {
+  box-shadow: inset 6px 6px 12px rgba(0, 0, 0, 0.05), inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+}
+
+.pill-shadow {
+  box-shadow: 0 8px 32px 0 rgba(183, 16, 42, 0.15);
+}
+
+.pillowy-glow {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 218, 216, 0.15) 0%, transparent 50%);
+}
+
+/* ────── Gradient System ────── */
+.pulse-gradient {
+  background: linear-gradient(135deg, #b7102a 0%, #b7004d 100%);
+}
+
+.pulse-gradient-text {
+  background: linear-gradient(135deg, #b7102a 0%, #b7004d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ────── Antigravity Float Animation ────── */
+@keyframes antigravity-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+@keyframes float-token {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-12px) scale(1.02); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.antigravity-float {
+  filter: drop-shadow(0 20px 32px rgba(187, 21, 44, 0.1));
+  animation: antigravity-float 6s ease-in-out infinite;
+}
+
+.chain-float {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.token-float {
+  animation: float-token 4s ease-in-out infinite;
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ────── Glass Nav ────── */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-panel {
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* ────── Layout Utilities ────── */
+.container-xl {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ────── Chat Bubbles ────── */
+.clay-bubble-ai {
+  background: #fdfdfd;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.03), inset -4px -4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.clay-bubble-user {
+  background: #ffffff;
+  box-shadow: 6px 6px 12px rgba(230, 57, 70, 0.08), -6px -6px 12px rgba(255, 255, 255, 1);
+}
+
+/* ────── Scrollbar ────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container-low);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--outline);
+}
+
+/* ────── Focus Ring ────── */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ────── Selection ────── */
+::selection {
+  background: var(--primary-fixed);
+  color: var(--on-primary-fixed);
+}
+
+/* Input reset */
+input, textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--outline);
+  opacity: 0.7;
+}

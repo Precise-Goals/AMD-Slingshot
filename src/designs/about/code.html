@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Healia - The Living Lab</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#ffb3b1",
+                        "surface-container": "#eeeeee",
+                        "on-primary-fixed": "#410007",
+                        "on-primary-fixed-variant": "#92001c",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#ffb2bf",
+                        "secondary-fixed": "#ffd9de",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-variant": "#e2e2e2",
+                        "on-primary-container": "#fffbff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-tertiary-fixed": "#00201d",
+                        "secondary-container": "#e50062",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#3f0016",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#6fd8cc",
+                        "tertiary-fixed": "#8cf4e8",
+                        "on-error": "#ffffff",
+                        "tertiary": "#006860",
+                        "surface-container-high": "#e8e8e8",
+                        "on-surface": "#1a1c1c",
+                        "surface-tint": "#bb152c",
+                        "primary-container": "#db313f",
+                        "on-tertiary-container": "#f3fffc",
+                        "surface-dim": "#dadada",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary-fixed-variant": "#00504a",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5b403f",
+                        "primary": "#b7102a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "outline": "#8f6f6e",
+                        "surface": "#f9f9f9",
+                        "tertiary-container": "#008379",
+                        "primary-fixed": "#ffdad8",
+                        "secondary": "#b7004d",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#90003b",
+                        "outline-variant": "#e4bebc",
+                        "on-background": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb3b1",
+                        "background": "#f9f9f9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .clay-card {
+            box-shadow: 8px 8px 16px rgba(0,0,0,0.04), -8px -8px 16px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .clay-card-inset {
+            box-shadow: inset 6px 6px 12px rgba(0,0,0,0.05), inset -6px -6px 12px rgba(255,255,255,0.8);
+        }
+        .pill-shadow {
+            box-shadow: 0 8px 32px 0 rgba(183, 16, 42, 0.15);
+        }
+        .glass-nav {
+            backdrop-filter: blur(24px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-gradient-pulse {
+            background: linear-gradient(135deg, #b7102a 0%, #b7004d 100%);
+        }
+        .mask-image-radial {
+            mask-image: radial-gradient(circle, black 0%, transparent 80%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/40 backdrop-blur-xl no-border shadow-xl h-20">
+<div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+<div class="text-2xl font-black text-[#E63946] tracking-tighter font-headline">Healia</div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center space-x-8 font-headline font-bold text-sm tracking-tight">
+<a class="text-slate-600 hover:text-[#E63946] transition-colors" href="#">Home</a>
+<a class="text-[#E63946] border-b-2 border-[#E63946] pb-1" href="#">About</a>
+<a class="text-slate-600 hover:text-[#E63946] transition-colors" href="#">Planner</a>
+<a class="text-slate-600 hover:text-[#E63946] transition-colors" href="#">Assistant</a>
+</div>
+<!-- Trailing Actions (Wallet Connect) -->
+<div class="flex items-center space-x-3">
+<div class="hidden sm:flex items-center bg-surface-container-highest px-4 py-2 rounded-full pill-shadow scale-95 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-sm text-secondary mr-2" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label text-xs font-bold text-on-surface-variant">0x12...ab34</span>
+</div>
+<button class="bg-gradient-pulse text-white px-5 py-2 rounded-full font-headline text-sm font-bold shadow-lg scale-95 active:scale-90 transition-all">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-6 pt-32 pb-20">
+<!-- Hero Section -->
+<div class="flex flex-col items-center mb-16 text-center">
+<div class="bg-primary-fixed/30 text-primary font-label text-xs font-bold px-4 py-1.5 rounded-full mb-6 uppercase tracking-widest">
+                Our Ecosystem
+            </div>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-surface tracking-tighter leading-tight max-w-4xl">
+                Redefining Human Health through <span class="bg-clip-text text-transparent bg-gradient-pulse">Living Data</span>.
+            </h1>
+</div>
+<!-- Bento Grid Container -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-auto">
+<!-- Mission Section -->
+<section class="md:col-span-8 clay-card bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden flex flex-col justify-between">
+<div class="max-w-2xl relative z-10">
+<h2 class="font-headline text-3xl font-extrabold text-primary mb-6">Our Mission</h2>
+<p class="font-body text-lg text-on-surface-variant leading-relaxed mb-8">
+                        Healia was born from a simple yet radical idea: your health data shouldn't be a locked static file. It should be a <span class="font-bold text-on-surface">liquid asset</span> that works for you. We are building the first decentralized "Living Lab"—a platform where every step, every meal, and every heartbeat is encrypted on-chain to provide personalized, AI-driven longevity protocols.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="clay-card-inset bg-surface-container-low p-5 rounded-lg">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">security</span>
+<div class="font-headline font-bold text-on-surface">Data Sovereignty</div>
+<div class="font-label text-xs text-on-surface-variant">Your metrics, your keys.</div>
+</div>
+<div class="clay-card-inset bg-surface-container-low p-5 rounded-lg">
+<span class="material-symbols-outlined text-secondary mb-2" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<div class="font-headline font-bold text-on-surface">Proactive Care</div>
+<div class="font-label text-xs text-on-surface-variant">Preventative AI tracking.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Stats Card -->
+<div class="md:col-span-4 clay-card bg-primary-container rounded-xl p-8 flex flex-col justify-center items-center text-center text-white">
+<span class="font-label text-sm text-primary-fixed font-bold mb-2">Live Network Value</span>
+<div class="font-headline text-5xl font-black mb-4">12.4M</div>
+<div class="font-body text-sm opacity-80 mb-6">Health milestones minted this month across the global ecosystem.</div>
+<div class="w-full h-px bg-white/20 mb-6"></div>
+<div class="flex items-center space-x-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></div>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Protocol Active</span>
+</div>
+</div>
+<!-- New Section: Living Data Privacy & Encryption -->
+<section class="md:col-span-12 clay-card bg-white rounded-xl p-10 mt-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface mb-6">Privacy-First Architecture</h2>
+<p class="font-body text-on-surface-variant mb-6 leading-relaxed">
+                        In the age of information, your biological blueprint is your most valuable asset. Healia utilizes <span class="font-bold text-primary">Zero-Knowledge Proofs (ZKP)</span> and end-to-end encryption to ensure your data is never sold, leaked, or accessed without your explicit permission.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">encrypted</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Encrypted Biometrics</h4>
+<p class="font-label text-sm text-on-surface-variant">All health markers are encrypted locally before ever hitting the chain.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">vpn_key</span>
+</div>
+<div>
+<h4 class="font-headline font-bold text-on-surface">Self-Custodial Identity</h4>
+<p class="font-label text-sm text-on-surface-variant">You hold the private keys to your health identity. No central server has access.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex justify-center">
+<!-- DNA Helix separated from text -->
+<div class="w-full max-w-sm clay-card bg-surface-container-lowest rounded-2xl p-4 flex justify-center items-center">
+<img alt="Floating DNA Helix" class="w-full h-auto max-h-64 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTFILnkP8x6M2crxf0RzxNFjVMQq1V9ZLmpHg7TWvcI5vjxF7M2wp6h2EUpDNppaNVYc-hBL-o35EHl9OM0SdKX2kXWqZzhHg9kAwl2oPhPkmggPBztIm0U4ONMUPiONWJqk5TUghEAgL1TV33rdsIQ1dF6lji6-LZ7TysuOeLY-P35YcnGWVehMdPBPXRUJPjwvuoeDuNukPU5SQVQimj2SeWO6ANJrt_NSCJzOP54AFUs9JwH88PAdeuyC9nNsFdUjzpxKrbvg0"/>
+</div>
+</div>
+</section>
+<!-- Meet the Team / Advisors Section -->
+<section class="md:col-span-12 mt-12">
+<div class="text-center mb-12">
+<h2 class="font-headline text-4xl font-black text-on-surface mb-2">Our Brain Trust</h2>
+<p class="font-body text-on-surface-variant">The minds merging bio-science with decentralized tech.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Member 1 -->
+<div class="clay-card bg-white rounded-xl p-6 text-center group hover:-translate-y-2 transition-all duration-300">
+<div class="w-24 h-24 bg-surface-container-high rounded-full mx-auto mb-4 border-4 border-white clay-card overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">person</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Dr. Elara Vance</h4>
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Lead Bio-Engineer</p>
+<p class="font-body text-xs text-on-surface-variant">Formerly MIT. Specialized in genomic longevity models.</p>
+</div>
+<!-- Member 2 -->
+<div class="clay-card bg-white rounded-xl p-6 text-center group hover:-translate-y-2 transition-all duration-300">
+<div class="w-24 h-24 bg-surface-container-high rounded-full mx-auto mb-4 border-4 border-white clay-card overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-4xl">person</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Marcus Thorne</h4>
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Protocol Lead</p>
+<p class="font-body text-xs text-on-surface-variant">Blockchain architect with focus on ZK-proof efficiency.</p>
+</div>
+<!-- Member 3 -->
+<div class="clay-card bg-white rounded-xl p-6 text-center group hover:-translate-y-2 transition-all duration-300">
+<div class="w-24 h-24 bg-surface-container-high rounded-full mx-auto mb-4 border-4 border-white clay-card overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-primary/10 to-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl">person</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Sarah Chen</h4>
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">AI Ethics</p>
+<p class="font-body text-xs text-on-surface-variant">Ensuring algorithmic fairness in personalized healthcare.</p>
+</div>
+<!-- Member 4 -->
+<div class="clay-card bg-white rounded-xl p-6 text-center group hover:-translate-y-2 transition-all duration-300">
+<div class="w-24 h-24 bg-surface-container-high rounded-full mx-auto mb-4 border-4 border-white clay-card overflow-hidden">
+<div class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface text-4xl">person</span>
+</div>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Jameson Reed</h4>
+<p class="font-label text-[10px] text-primary font-bold uppercase tracking-widest mb-2">Global Strategy</p>
+<p class="font-body text-xs text-on-surface-variant">Navigating the intersection of web3 and health policy.</p>
+</div>
+</div>
+</section>
+<!-- Detailed FAQ Section -->
+<section class="md:col-span-12 mt-12 bg-surface-container-low rounded-xl p-10 clay-card-inset">
+<div class="text-center mb-10">
+<h2 class="font-headline text-3xl font-extrabold text-on-surface">Frequently Asked Questions</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="clay-card bg-white p-6 rounded-lg">
+<h4 class="font-headline font-bold text-primary mb-2">How is my data actually stored?</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Your data is shredded and encrypted into fragments stored across decentralized IPFS nodes. Only your private wallet key can reassemble and decrypt it.
+                        </p>
+</div>
+<div class="clay-card bg-white p-6 rounded-lg">
+<h4 class="font-headline font-bold text-primary mb-2">Can insurance companies see my data?</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            No. By default, your identity is anonymous. You choose exactly who sees what via granular on-chain permissions.
+                        </p>
+</div>
+<div class="clay-card bg-white p-6 rounded-lg">
+<h4 class="font-headline font-bold text-primary mb-2">What can I do with Healia tokens?</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Tokens can be used to unlock premium AI insights, purchase biological age tests, or staked to participate in protocol governance.
+                        </p>
+</div>
+<div class="clay-card bg-white p-6 rounded-lg">
+<h4 class="font-headline font-bold text-primary mb-2">Is Healia a medical device?</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Healia is a health optimization protocol. While we use peer-reviewed science, we recommend consulting a doctor for any clinical decisions.
+                        </p>
+</div>
+</div>
+</section>
+<!-- Bottom CTA Section -->
+<div class="md:col-span-12 mt-12 flex flex-col md:flex-row items-center justify-between clay-card-inset bg-surface-container-low p-8 rounded-xl">
+<div class="mb-6 md:mb-0">
+<h3 class="font-headline text-2xl font-black text-on-surface tracking-tight">Ready to join the Lab?</h3>
+<p class="font-body text-on-surface-variant">Start your journey toward data-driven longevity today.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-white text-on-surface px-8 py-4 rounded-xl clay-card font-headline font-bold transition-all active:scale-95">Read the Whitepaper</button>
+<button class="bg-gradient-pulse text-white px-8 py-4 rounded-xl shadow-lg font-headline font-bold transition-all active:scale-95">Launch App</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-20 bg-[#f9f9f9] tonal-shift-from-surface-to-container-low shadow-[inset_6px_6px_12px_rgba(0,0,0,0.05),inset_-6px_-6px_12px_rgba(255,255,255,0.8)]">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex flex-col items-center md:items-start">
+<div class="text-lg font-bold text-[#E63946] font-headline mb-2">Healia</div>
+<p class="font-['Inter'] text-xs font-medium text-slate-500 max-w-xs text-center md:text-left">
+                    © 2024 Healia. All health data is encrypted on-chain.
+                </p>
+</div>
+<div class="flex items-center space-x-6">
+<a class="font-['Inter'] text-xs font-medium text-slate-400 hover:text-[#FF006E] transition-colors" href="#">Discord</a>
+<a class="font-['Inter'] text-xs font-medium text-slate-400 hover:text-[#FF006E] transition-colors" href="#">Twitter</a>
+<a class="font-['Inter'] text-xs font-medium text-slate-400 hover:text-[#FF006E] transition-colors" href="#">Disclaimer</a>
+<a class="font-['Inter'] text-xs font-medium text-slate-400 hover:text-[#FF006E] transition-colors" href="#">Privacy</a>
+</div>
+<div class="flex items-center space-x-2 bg-white px-4 py-2 rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="text-[10px] font-bold text-slate-500 font-label">Mainnet Alpha</span>
+</div>
+</div>
+</footer>
+</body></html>
