@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
-RUN npm ci --frozen-lockfile
+RUN npm ci
 
 # Copy source
 COPY . .
